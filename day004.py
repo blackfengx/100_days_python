@@ -1,20 +1,57 @@
-# 🚨 Don't change the code below 👇
-row1 = ["⬜️","️⬜️","️⬜️"]
-row2 = ["⬜️","⬜️","️⬜️"]
-row3 = ["⬜️️","⬜️️","⬜️️"]
-map = [row1, row2, row3]
-print(f"{row1}\n{row2}\n{row3}")
-position = input("Where do you want to put the treasure? ")
-# 🚨 Don't change the code above 👆
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
 
-#Write your code below this row 👇
-row = int(position[1]) - 1
-col = int(position[0]) - 1
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
 
-map[row][col] = 'X'
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
 
+#Write your code below this line 👇
+import random
 
-#Write your code above this row 👆
+choice = input("What do you choose? Type 0 for Rock, 1 for Scissors, or 2 for Paper. ")
+computer_choice = str(random.randint(0,2))
 
-# 🚨 Don't change the code below 👇
-print(f"{row1}\n{row2}\n{row3}")
+if choice == "0":
+    print(rock)
+elif choice == "1":
+    print(scissors)
+elif choice == "2":
+    print(paper)
+else:
+    print("That is not a valid choice. Try again.")
+
+print("Computer chose: ")
+
+if computer_choice == "0":
+    print(rock)
+elif computer_choice == "1":
+    print(scissors)
+elif computer_choice == "2":
+    print(paper)
+
+if choice == "0" and computer_choice == "0" or choice == "1" and computer_choice == "1" or choice == "2" and computer_choice == "2":
+    print("You tie.")
+elif choice == "0" and computer_choice == "2" or choice == "1" and computer_choice == "0" or choice == "2" and computer_choice == "1":
+    print("You lose.")
+elif choice == "0" and computer_choice == "1" or choice == "1" and computer_choice == "2" or choice == "2" and computer_choice == "0":
+    print("You win.")
