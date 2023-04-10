@@ -49,7 +49,7 @@ elif computer_choice == "1":
 elif computer_choice == "2":
     print(paper)
 
-if choice == "0" and computer_choice == "0" or choice == "1" and computer_choice == "1" or choice == "2" and computer_choice == "2":
+if choice == computer_choice:
     print("You tie.")
 elif choice == "0" and computer_choice == "2" or choice == "1" and computer_choice == "0" or choice == "2" and computer_choice == "1":
     print("You lose.")
