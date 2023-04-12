@@ -24,4 +24,9 @@ def race():
     hurdle()
     hurdle()
 
+# Can rewrite this ^ to this v
+
+# for jump in range(6):
+    # hurdle()
+
 race()
